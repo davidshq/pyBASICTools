@@ -1,6 +1,6 @@
 # Python BASIC Tools
 
-basfile = open("CWSTRAT.BAS")
-bascontents = basfile.read()
-basfile.close()
-print(bascontents)
+# Open File and Print Contents
+with open('/workspaces/python/pyBASICTools/CWSTRAT.BAS', 'rt') as basfile:
+    bascontents = basfile.read()
+    print(bascontents)
