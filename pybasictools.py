@@ -7,5 +7,6 @@ baslines = []
 with open('/workspaces/python/pyBASICTools/CWSTRAT.BAS', 'rt') as basfile:
     for basline in basfile:
         baslines.append(basline)
-    
-    print(baslines)
+    for baselement in baslines:
+        # When outputting, remove the newline character
+        print(baselement, end='')
