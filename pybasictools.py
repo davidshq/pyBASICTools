@@ -15,17 +15,18 @@ prev = 0 # previous index in list
 
 
 while index < len(baslist):
-    lineindex = 0 # current index in string
-    lineprev = 0 # previous index in string
-    str = baslist[index] # first string to search from baslines
-    substr = "SUB animate" # substring we are looking for
-    while lineindex < len(str): # While there are still more items in the list
-        found = str.find(substr, lineindex)
-        if found == -1:
-            lineindex = lineindex + 1
-            break
-        print(" " * (found - lineprev) + "e", end='') # Print location of substring
-        lineprev = found + len(substr) 
-        lineindex += len(substr)
+    charindex = 0 # current index in string
+    charprev = 0 # previous index in string
+    currentstr = baslist[index] # the string we are searching
+    searchstr = "SUB animate"
+    while charindex < len(currentstr): # While there are still more items in the list
+        foundstr = currentstr.find(searchstr, charindex) # Find our substring beginning at lineindex.
+        if foundstr == -1: # If it doesn't exist
+            break # Go to next iteration of loop
+        foundchar = foundstr - charprev
+        print_result = "Found at " + str(foundchar) + " character on line " + str(index + 1) + "."
+        print(print_result) # Print location of substring
+        charprev = foundstr + len(searchstr) # Add length of substring to the location substring begins at  
+        charindex += len(searchstr)  # Set lineindex to location substring ends at
     prev = index
     index = index + 1
